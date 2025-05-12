@@ -19,3 +19,14 @@ body {
   font-family: 'gothamrnd_medium';
   src: url('/fonts/gothamrnd_medium.otf') format('opentype');
 }
+
+.ant-form-item-label > label { /*CSS para aumentar el size de los modales (Label)*/
+  font-size: 18px !important;
+}
+.ant-input { /*CSS para aumentar el size de los modales (Input)*/
+  font-size: 16px !important;
+}
+.modal-title {
+  font-size: 20px !important; /*CSS para aumentar el size de los modales (Title)*/
+  font-weight: bold;
+}
