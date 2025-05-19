@@ -13,6 +13,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Grid, Typography } from '@mui/material';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
+import Container from '@mui/material/Container';
 import Link from 'next/link';
 
 const Navbar: React.FC = () => {
@@ -38,29 +39,85 @@ const Navbar: React.FC = () => {
 
     return (
         <div>
-            <Grid container spacing={2} alignItems="center" mt={2} mb={2} justifyContent="center"  >
-                <Grid item xs={12} sm={3} textAlign={isMobile ? 'center' : 'end'}>
-                    <Box sx={{ display: 'flex', justifyContent: isMobile ? 'center' : 'end' }}>
-                        <img src="/logo1.png" alt="Logo" style={{ height: '150px' }} />
-                    </Box>
-                </Grid>
-                <Grid item xs={12} sm={8}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'start', height: '100%' }}>
-                        <Typography variant="h3" sx={{ fontFamily: 'gothamrnd_bold', color: '#79142A', textAlign: 'center' }}>
-                            Padrón Único de Personas Beneficiarias
+            <Box sx={{ width: '100%', backgroundColor: '#dacec0', py: 2 }}>
+                <Container maxWidth="lg">
+                    <Grid 
+                        container 
+                    spacing={2} 
+                    alignItems="center" 
+                    justifyContent="center"
+                    sx={{
+                        margin: '0 auto', 
+                        width: '100%' 
+                    }}
+                    >
+                    <Grid item xs={12} md={3} sx={{ 
+                        display: { xs: 'none', md: 'flex' },
+                        justifyContent: 'flex-start',
+                        alignItems: 'center'
+                    }}>
+                        <img 
+                        src="/logo1.png" 
+                        alt="Logo" 
+                        style={{ 
+                            height: '120px',
+                            objectFit: 'contain',
+                            margin: '0 auto' 
+                        }} 
+                        />
+                    </Grid>
+                    <Grid item xs={12} md={6} sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        order: { xs: 2, md: 1 } 
+                    }}>
+                        <Typography 
+                        variant="h3" 
+                        sx={{ 
+                            fontFamily: 'gothamrnd_bold', 
+                            color: '#79142A',
+                            fontSize: { xs: '1.5rem', sm: '1.8rem', md: '2.2rem' },
+                            lineHeight: '1.2',
+                            margin: '0 auto'
+                        }}
+                        >
+                        Padrón Único de Personas Beneficiarias
                         </Typography>
-                    </Box>
-                </Grid>
-            </Grid>
-            <AppBar position="static" sx={{ bgcolor: '#dacec0', height: '70px', borderRadius: '40px', width: '90%', margin: 'auto' }}>
-                <Toolbar>
-                    <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
-                        <Link href={'/Pages/Home'}>
-                            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                                <img src="/logoPub.png" alt="Logo" style={{ height: '60px', marginLeft: '20px' }} />
-                            </IconButton>
+                    </Grid>
+                    <Grid item xs={12} md={3} sx={{
+                        display: 'flex',
+                        justifyContent: { xs: 'center', md: 'flex-end' },
+                        alignItems: 'center',
+                        order: { xs: 1, md: 2 } 
+                    }}>
+                        <Link href={'/Pages/Home'} passHref>
+                        <IconButton sx={{ 
+                            p: 0,
+                            '&:hover': {
+                            transform: 'scale(1.05)'
+                            },
+                            transition: 'transform 0.3s ease'
+                        }}>
+                            <img 
+                            src="/logoPub.png" 
+                            alt="Logo" 
+                            style={{ 
+                                height: '100px',
+                                objectFit: 'contain',
+                                margin: '0 auto' 
+                            }} 
+                            />
+                        </IconButton>
                         </Link>
-                    </Box>
+                    </Grid>
+                    </Grid>
+                </Container>
+                </Box>
+            <AppBar position="static" sx={{ bgcolor: '#dacec0', height: '60px', width: '70%', margin: 'auto' ,borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px',boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
+                <Toolbar>
+                    
                     {isMobile ? (
                         <>
                             <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleDrawerOpen}>

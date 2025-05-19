@@ -14,8 +14,9 @@ const images = [
 
 const cardsData = [
     { id: 1, imageUrl: '/personas.png', title: 'Beneficiarios', description: 'Búsqueda por beneficiarios', href: '/Pages/Filtros/Beneficiarios-filtro' },
-    { id: 2, imageUrl: '/dependencias.png', title: 'Dependencias', description: 'Búsqueda', href: '/Pages/Filtros/Dependencias-filtro' },
-    { id: 3, imageUrl: '/programa.png', title: 'Programas', description: 'Búsqueda', href: '/Pages/Filtros/Programas-filtro' },
+    { id: 2, imageUrl: '/dependencias.png', title: 'Dependencias', description: 'Búsqueda por dependencias', href: '/Pages/Filtros/Dependencias-filtro' },
+    { id: 3, imageUrl: '/programa.png', title: 'Programas', description: 'Búsqueda por programas', href: '/Pages/Filtros/Programas-filtro' },
+    { id: 4, imageUrl: '/historico-test.png', title: 'Historicos', description: 'Consulta por historicos', href: '/Pages/Filtros/Historico-filtro' }
 ];
 
 const Home = () => {
